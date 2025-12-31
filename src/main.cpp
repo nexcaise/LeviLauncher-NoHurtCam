@@ -137,7 +137,10 @@ extern "C" {
     __attribute__((visibility("default")))
     void LeviMod_Load() {
         LOGI("LeviMod_Load()");
-        if (!findAndHookVanillaCameraAPI()) return LOGE("!findAndHookVanillaCameraAPI()");
+        if (!findAndHookVanillaCameraAPI()) {
+            LOGE("!findAndHookVanillaCameraAPI(), Vanilla Camera API not found!");
+            return;
+        }
         LOGI("Successfully Activated Mod: NoHurtCam!");
     }
 }
