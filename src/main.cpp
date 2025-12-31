@@ -144,3 +144,13 @@ extern "C" {
         LOGI("Successfully Activated Mod: NoHurtCam!");
     }
 }
+
+__attribute__((constructor))
+void NoHurtCam_Init() {
+    LOGI("NoHurtCam_Init()");
+    if (!findAndHookVanillaCameraAPI()) {
+        LOGE("!findAndHookVanillaCameraAPI(), Vanilla Camera API not found!");
+        return;
+    }
+    LOGI("Successfully Activated Mod: NoHurtCam!");
+}
