@@ -29,7 +29,7 @@ add_ldflags(
 
 add_requires(
     "fmt 10.2.1",
-    "preloader-android git+https://github.com/nexcaise/preloader-android.git@main"
+    "preloader-android git+https://github.com/nexcaise/preloader-android.git"
 )
 
 target("NoHurtCam")
