@@ -10,6 +10,12 @@ add_cxflags(
     "-fvisibility=hidden",
     "-ffunction-sections",
     "-fdata-sections",
+    "-fno-rtti",
+    "-fno-exceptions",
+    "-fomit-frame-pointer",
+    "-fno-unwind-tables",
+    "-fno-asynchronous-unwind-tables",
+    "-flto",
     "-w"
 )
 
@@ -18,12 +24,16 @@ add_cflags(
     "-fvisibility=hidden",
     "-ffunction-sections",
     "-fdata-sections",
+    "-flto",
     "-w"
 )
 
 add_ldflags(
     "-Wl,--gc-sections",
     "-Wl,--strip-all",
+    "-Wl,--exclude-libs,ALL",
+    "-Wl,--no-eh-frame-hdr",
+    "-flto",
     "-s",
     {force = true}
 )
